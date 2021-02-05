@@ -1,0 +1,23 @@
+<h1>Ingreso de nuevo Prestamo</h1><br>
+
+<%= form_with(model: @book, local: true) do |f| %>
+
+    <%= f.label :title, 'Titulo del libro' %>
+    <%= f.text_field :title, placeholder: 'Escribe aqui' %>
+    <br>
+    <%= f.label :author, 'Author del libro' %>
+    <%= f.text_field :author, placeholder: 'Escribe aqui' %>
+    <br>
+    <%= f.label :status, 'Estado del Libro' %>
+    <%= f.select :status, Book.statuses.keys %>
+    <br>
+    <%= f.label :borrowed_at, 'Dia de prestamo' %>
+    <%= f.date_field :borrowed_at%>
+    <br>
+    <%= f.label :returned_at, 'Dia de devolucion' %>
+    <%= f.date_field :returned_at%>
+    <br>
+    <br>
+    <%= f.submit 'Crear prestamo' %>
+
+<% end %>
