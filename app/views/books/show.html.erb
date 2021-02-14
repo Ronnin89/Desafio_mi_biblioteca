@@ -1,0 +1,26 @@
+<h1>Edita tu libro</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Titulo</th>
+      <th scope="col">Author</th>
+      <th scope="col">Status</th>
+      <th scope="col">Fecha de Prestamo</th>
+      <th scope="col">Fecha de Devolucion</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr>
+            <td><%= @book.title %></td>
+            <td><%= @book.author %></td>
+            <td><%= @book.status %></td>
+            <td><%= @book.borrowed_at %></td>
+            <td><%= @book.returned_at %></td>
+            <td><%= link_to "Editar", edit_book_path %></td>
+        </tr>
+  </tbody>
+</table>
+<button><%= link_to "Volver al inicio", root_path %></button>
+  

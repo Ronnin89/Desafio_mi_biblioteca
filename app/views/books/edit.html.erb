@@ -1,12 +1,12 @@
-<h1>Ingreso de nuevo Libro</h1><br>
+<h1>Modifica tu prestamo</h1><br>
 
 <%= form_with(model: @book, local: true) do |f| %>
 
     <%= f.label :title, 'Titulo del libro' %>
-    <%= f.text_field :title, placeholder: 'Escribe aqui' %>
+    <%= f.text_field :title %>
     <br>
     <%= f.label :author, 'Author del libro' %>
-    <%= f.text_field :author, placeholder: 'Escribe aqui' %>
+    <%= f.text_field :author %>
     <br>
     <%= f.label :status, 'Estado del Libro' %>
     <%= f.select :status, Book.statuses.keys %>
@@ -18,7 +18,6 @@
     <%= f.date_field :returned_at%>
     <br>
     <br>
-    <%= f.submit 'Crear libro' %>
+    <%= f.submit 'Modificar libro' %>
     <button><%= link_to "Cancelar", root_path %></button>
-
 <% end %>
