@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @q = Book.ransack(params[:q])
@@ -31,8 +31,6 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book = Book.find(params[:id])
-
     @book.destroy
     redirect_to root_path
   end
